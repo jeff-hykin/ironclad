@@ -1,0 +1,7 @@
+[target.x86_64-unknown-linux-musl]
+linker = "x86_64-linux-musl-gcc"
+
+# This is so that executables are statically linked on windows
+# https://stackoverflow.com/questions/31770604/how-to-generate-statically-linked-executables
+[target.x86_64-pc-windows-msvc]
+rustflags = ["-C", "target-feature=+crt-static"]
